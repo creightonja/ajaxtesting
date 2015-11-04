@@ -18,7 +18,10 @@ request.onreadystatechange = function() {
         var modified = document.getElementsByTagName('ul')[1].getElementsByTagName('li');
         var theText = request.responseText;
         modify.innerHTML = theText;
-        modified[2].innerHTML = theText;
+        for (var i = 0; i < modified.length; i++) {
+            modified[i].innerHTML = theText + i;
+        }
+
     }
 }
 request.send();
