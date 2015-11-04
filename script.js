@@ -15,7 +15,10 @@ request.onreadystatechange = function() {
     if ((request.readyState===4) && (request.status===200)) {
         console.log(request);
         var modify = document.getElementById('update');
-        modify.innerHTML = request.responseText;
+        var modified = document.getElementsByTagName('ul')[1].getElementsByTagName('li');
+        var theText = request.responseText;
+        modify.innerHTML = theText;
+        modified[2].innerHTML = theText;
     }
 }
 request.send();
